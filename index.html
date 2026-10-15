@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Devisha Properties — Property Search Dubai</title>
+<meta name="description" content="Search Dubai properties by area, bedrooms, size or budget. Type it the way you'd say it and matching listings appear instantly.">
+<meta property="og:title" content="Devisha Properties — Property Search Dubai">
+<meta property="og:description" content="Search Dubai properties by area, bedrooms, size or budget.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏙️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta name="theme-color" content="#0f5c4d">
+<style>
+:root{
+  --bg:#f6f3ec;--card:#fffdf9;--ink:#1b2129;--mut:#6b6f76;--line:#e4ded2;--acc:#0f5c4d;--acc2:#0b463b;--accb:#e3f0ec;
+  --sand:#c79a5b;--ok:#1e7a4e;--okb:#e2f3e9;--off:#8a5a00;--offb:#fbefd2;
+  --serif:"Fraunces",Georgia,serif;--sans:"Manrope",-apple-system,"Segoe UI",Roboto,sans-serif;
+  --r:14px;--shadow:0 1px 2px rgba(20,25,30,.04),0 8px 24px -12px rgba(20,25,30,.18);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#12161b;--card:#1a2027;--ink:#ece8e0;--mut:#9aa1ab;--line:#29313a;--acc:#5fc4ad;--acc2:#7ad6c1;--accb:#173a33;
+  --ok:#6fd49c;--okb:#173326;--off:#f0c46a;--offb:#3a2f14;--shadow:0 8px 24px -12px rgba(0,0,0,.6);color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#12161b;--card:#1a2027;--ink:#ece8e0;--mut:#9aa1ab;--line:#29313a;--acc:#5fc4ad;--acc2:#7ad6c1;--accb:#173a33;
+  --ok:#6fd49c;--okb:#173326;--off:#f0c46a;--offb:#3a2f14;--shadow:0 8px 24px -12px rgba(0,0,0,.6);color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 var(--sans);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+button,select,input,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.meta{color:var(--mut);font-size:13.5px}
+h1,h2,h3{font-family:var(--serif);font-weight:600;letter-spacing:-.01em;margin:0}
+.eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;margin:0 0 12px;color:#f3dcb4}
+.eyebrow.dark{color:var(--sand)}
+
+/* Nav */
+.nav{position:sticky;top:0;z-index:20;display:flex;justify-content:space-between;align-items:center;gap:16px;
+  padding:12px clamp(16px,4vw,48px);background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.brand{font-family:var(--serif);font-weight:600;font-size:19px;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:8px}
+.brand .mark{color:var(--sand);font-size:14px}.brand small{font-family:var(--sans);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);font-weight:600}
+.nav nav{display:flex;align-items:center;gap:4px}
+.nav nav a{color:var(--ink);text-decoration:none;font-weight:500;font-size:14px;padding:8px 12px;border-radius:99px}
+.nav nav a:hover{background:var(--accb)}
+.nav nav a.cta{background:var(--acc);color:var(--bg)}
+.icon{border:1px solid var(--line);background:var(--card);width:36px;height:36px;border-radius:99px;display:grid;place-items:center;font-size:16px;margin-left:6px}
+@media (max-width:720px){.nav nav a:not(.cta){display:none}}
+
+/* Hero */
+.hero{position:relative;min-height:min(86vh,760px);display:flex;align-items:flex-end;overflow:hidden;color:#fff;isolation:isolate}
+.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 40%;z-index:-2}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(180deg,rgba(8,14,20,.05) 0%,rgba(8,14,20,.25) 40%,rgba(8,14,20,.82) 100%),linear-gradient(90deg,rgba(8,14,20,.55),transparent 65%)}
+.hero-in{width:100%;max-width:1200px;margin:0 auto;padding:120px clamp(16px,4vw,48px) 48px}
+.hero h1{font-size:clamp(36px,6vw,72px);line-height:1.02;max-width:14ch}
+.hero h1 em{font-weight:400;color:#f3dcb4}
+.lede{font-size:clamp(16px,1.6vw,19px);max-width:52ch;opacity:.9;margin:18px 0 26px}
+.search{display:flex;gap:8px;max-width:760px;background:rgba(255,255,255,.96);padding:8px;border-radius:18px;box-shadow:0 20px 50px -20px rgba(0,0,0,.6)}
+.search input{flex:1;min-width:0;border:0;background:transparent;font-size:18px;padding:12px 14px;color:#1b2129;outline:none}
+.search button{border:0;border-radius:12px;background:#0f5c4d;color:#fff;font-weight:600;padding:0 26px}
+.search button:hover{background:#0b463b}
+.ex-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:14px;font-size:13px}
+.ex-row>span{opacity:.75}
+#ex{display:flex;flex-wrap:wrap;gap:6px}
+.ex{border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.1);backdrop-filter:blur(6px);color:#fff;border-radius:99px;padding:5px 12px;font-size:13px}
+.ex:hover{background:rgba(255,255,255,.22)}
+.stats{display:flex;gap:clamp(20px,5vw,56px);margin:40px 0 0;padding-top:22px;border-top:1px solid rgba(255,255,255,.2)}
+.stats div{margin:0}.stats dt{font-size:12px;letter-spacing:.08em;text-transform:uppercase;opacity:.7}
+.stats dd{margin:2px 0 0;font-family:var(--serif);font-size:clamp(26px,3vw,36px)}
+
+/* Results panel */
+main{max-width:1200px;margin:0 auto;padding:0 clamp(16px,4vw,48px) 40px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:22px;margin-top:-28px;position:relative;padding:clamp(18px,3vw,32px);box-shadow:var(--shadow)}
+.lab{font-size:11.5px;color:var(--mut);margin:0 0 8px;text-transform:uppercase;letter-spacing:.1em;font-weight:600}
+.fg+.fg{margin-top:18px}.row2{display:grid;grid-template-columns:auto 1fr;gap:18px 40px}
+@media (max-width:640px){.row2{grid-template-columns:1fr}}
+.pills{display:flex;flex-wrap:wrap;gap:6px}
+.pill{border:1px solid var(--line);background:var(--bg);border-radius:99px;padding:6px 13px;font-size:13.5px;font-weight:500;transition:.15s}
+.pill:hover{border-color:var(--acc)}
+.pill.on{background:var(--acc);border-color:var(--acc);color:var(--bg)}
+.bar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin:24px 0 18px;padding-top:20px;border-top:1px solid var(--line)}
+#cnt b{color:var(--ink);font-size:16px}
+.tools{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.check{display:flex;align-items:center;gap:6px;cursor:pointer}.check input{accent-color:var(--acc)}
+select,.ghost{border:1px solid var(--line);background:var(--card);border-radius:10px;padding:8px 12px;font-size:14px}
+.ghost:hover{border-color:var(--acc)}
+
+/* Catalogue list: header + one row per listing, columns shared via --cols */
+.catalogue{--cols:92px minmax(0,1fr) 72px 104px 92px 128px 128px;border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.cat-head,.item{display:grid;grid-template-columns:var(--cols);gap:16px;align-items:center;padding:14px 18px}
+.cat-head{background:var(--bg);border-bottom:1px solid var(--line);font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--mut);padding-block:10px}
+.cat-head span:last-child,.item .price{text-align:right}
+.item{background:var(--card);cursor:pointer;outline:none;transition:background .15s}
+.item+.item{border-top:1px solid var(--line)}
+.item:nth-child(odd){background:color-mix(in srgb,var(--bg) 45%,var(--card))}
+.item:hover,.item:focus-visible{background:var(--accb)}
+.item:focus-visible{box-shadow:inset 3px 0 0 var(--acc)}
+.c-ref b{display:block;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;font-weight:600;color:var(--acc2)}
+.c-ref span{font-size:12px;color:var(--mut)}
+.item h3{font-family:var(--sans);font-size:15px;font-weight:700;line-height:1.3}
+.item h3 span{color:var(--mut);font-weight:500}
+.c-spec{font-size:14px;font-weight:500;font-variant-numeric:tabular-nums;white-space:nowrap}
+.status{display:inline-block;font-size:11.5px;font-weight:600;padding:3px 10px;border-radius:99px;background:var(--bg);color:var(--ink);border:1px solid var(--line)}
+.status.ok{background:var(--okb);color:var(--ok);border-color:transparent}.status.off{background:var(--offb);color:var(--off);border-color:transparent}
+.price{font-family:var(--serif);font-weight:600;font-size:19px;color:var(--acc);white-space:nowrap;font-variant-numeric:tabular-nums}
+.price.na{font-family:var(--sans);font-size:13px;color:var(--mut)}
+.loc{margin:0;color:var(--mut);font-size:13px}
+.tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+.tags span{font-size:11.5px;padding:2px 9px;border-radius:99px;background:var(--accb);color:var(--acc2)}
+@media (max-width:860px){
+  .cat-head{display:none}
+  .item{grid-template-columns:repeat(3,1fr);gap:10px 14px}
+  .c-ref{grid-column:1/3;display:flex;gap:10px;align-items:baseline}
+  .c-status{grid-column:3;text-align:right}
+  .c-main{grid-column:1/-1}
+  .c-spec::before{content:attr(data-l);display:block;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);font-weight:600}
+  .item .price{grid-column:1/-1;text-align:left}
+}
+.empty{grid-column:1/-1;color:var(--mut);text-align:center;padding:40px 0}
+.link{border:0;background:none;color:var(--acc);font-weight:700;text-decoration:underline;padding:0}
+.more-row{text-align:center;margin-top:22px}.more-row .ghost{padding:10px 22px}
+
+/* Sections */
+.section{padding:clamp(48px,7vw,88px) 0 0}
+.sh{max-width:640px;margin-bottom:26px}.sh h2{font-size:clamp(28px,3.4vw,40px);margin-bottom:8px}
+.areas{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}
+.area{text-align:left;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px 18px;display:flex;flex-direction:column;gap:2px;transition:.15s}
+.area:hover{border-color:var(--acc);transform:translateY(-2px)}
+.area b{font-family:var(--serif);font-size:19px;font-weight:600}
+.area span{font-size:13.5px;font-weight:600;color:var(--acc)}
+.area em{font-style:normal;font-size:12.5px;color:var(--mut)}
+.tips{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.tips div{border-top:2px solid var(--sand);padding-top:14px}
+.tips b{font-size:15px}.tips p{margin:6px 0 0;color:var(--mut)}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;background:var(--accb);color:var(--acc2);padding:1px 6px;border-radius:6px}
+
+.contact{display:grid;grid-template-columns:1fr 1.2fr;gap:40px;align-items:start}
+@media (max-width:820px){.contact{grid-template-columns:1fr}}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.contact .form,.contact .done{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
+.form label{display:flex;flex-direction:column;gap:5px;font-size:12.5px;font-weight:600;color:var(--mut)}
+.form .full{grid-column:1/-1}
+.form input,.form select,.form textarea{border:1px solid var(--line);background:var(--bg);border-radius:10px;padding:10px 12px;font-size:15px;color:var(--ink);font-weight:400;width:100%}
+.form input:focus,.form select:focus,.form textarea:focus{outline:2px solid color-mix(in srgb,var(--acc) 50%,transparent);border-color:var(--acc)}
+.primary{border:0;border-radius:12px;background:var(--acc);color:var(--bg);font-weight:700;padding:13px;font-size:15px}
+.primary:hover{background:var(--acc2)}.primary:disabled{opacity:.6}
+.done{background:var(--okb);color:var(--ok);border-radius:14px;padding:18px}
+@media (max-width:520px){.form{grid-template-columns:1fr}}
+
+.foot{max-width:1200px;margin:72px auto 0;padding:24px clamp(16px,4vw,48px) 40px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-family:var(--serif)}
+
+/* Detail dialog */
+dialog{border:0;padding:0;border-radius:22px;width:min(760px,calc(100vw - 24px));max-height:calc(100dvh - 24px);background:var(--card);color:var(--ink);box-shadow:0 30px 80px -20px rgba(0,0,0,.5);overflow:hidden}
+dialog::backdrop{background:rgba(10,14,18,.6);backdrop-filter:blur(4px)}
+dialog[open]{animation:pop .22s ease-out}
+@keyframes pop{from{opacity:0;transform:translateY(12px) scale(.98)}}
+.d-scroll{max-height:calc(100dvh - 24px);overflow-y:auto;position:relative}
+.close{position:absolute;right:12px;top:12px;z-index:2;margin:0}
+.d-body{padding:26px clamp(18px,4vw,30px) 28px}
+.d-body>.eyebrow{margin-bottom:8px;padding-right:44px}
+.d-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;flex-wrap:wrap}
+.d-head h2{font-size:26px}.d-head p{margin:4px 0 0}
+.price.big{font-size:28px;white-space:nowrap}
+.facts-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin:20px 0 0}
+.facts-grid div{background:var(--card);padding:12px 14px}
+.facts-grid dt{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);font-weight:600}
+.facts-grid dd{margin:2px 0 0;font-weight:600}
+@media (max-width:560px){.facts-grid{grid-template-columns:repeat(2,1fr)}}
+.d-ph{position:relative;height:150px;overflow:hidden;background:#0b1a22}.d-ph img{width:100%;height:100%;object-fit:cover}
+.d-ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(0,0,0,.65))}
+.type{position:absolute;left:clamp(18px,4vw,30px);bottom:12px;z-index:1;color:#f3dcb4;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600}
+.d-body h3{font-size:19px;margin:24px 0 12px}
+.hero{background:#0b1a22}
+.star{border:0;background:none;font-size:19px;line-height:1;padding:0 0 0 8px;color:var(--sand);cursor:pointer}.star.on{color:#e0a43a}
+#fbar{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(14px + env(safe-area-inset-bottom));z-index:30;display:flex;gap:8px;align-items:center;justify-content:center;flex-wrap:wrap;background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:22px;box-shadow:var(--shadow);max-width:calc(100% - 24px)}
+#fbar[hidden]{display:none}#fbar span{font-weight:600}#fbar button{border:0;border-radius:99px;padding:6px 14px;background:var(--acc);color:var(--bg);font-weight:600}#fbar .ghost{background:transparent;color:inherit;border:1px solid currentColor}
+.cinfo{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:16px;font-weight:600}.cinfo a{color:var(--acc)}
+a.ghost{text-decoration:none;color:inherit;display:inline-block}
+
+</style>
+</head>
+<body>
+<header class="nav">
+  <a class="brand" href="./"><span class="mark">◆</span> Property Search <small>Dubai</small></a>
+  <nav>
+    <a href="#results">Listings</a>
+    <a href="#areas">Areas</a>
+    <a href="#how">How to search</a>
+    <a href="#contact" class="cta">Contact</a>
+    <button type="button" id="theme" class="icon" aria-label="Toggle dark mode">◐</button>
+  </nav>
+</header>
+
+<section class="hero">
+  <img class="hero-bg" src="hero.jpg" alt="" fetchpriority="high" onerror="this.remove()">
+  <div class="hero-in">
+    <p class="eyebrow">Dubai · Sale &amp; investment listings</p>
+    <h1>Find your next address<br><em>the way you'd say it.</em></h1>
+    <p class="lede">Type an area, number of bedrooms, size or budget — matching properties appear instantly.</p>
+    <form id="hero-form" class="search" role="search">
+      <label for="q" class="sr">Search properties</label>
+      <input id="q" type="search" autocomplete="off" placeholder="Try: Downtown · 2 bed · 1500 sqft · under 3M">
+      <button type="submit">Search</button>
+    </form>
+    <div class="ex-row"><span>Popular:</span><div id="ex"></div></div>
+    <dl class="stats">
+      <div><dt>Available listings</dt><dd id="s-count">—</dd></div>
+      <div><dt>Communities</dt><dd id="s-areas">—</dd></div>
+      <div><dt>Villas</dt><dd id="s-villas">—</dd></div>
+    </dl>
+  </div>
+</section>
+
+<main>
+  <section id="results" class="panel">
+    <div class="filters">
+      <div class="fg"><div class="lab">Area</div><div class="pills" id="fa"></div></div>
+      <div class="fg row2">
+        <div><div class="lab">Bedrooms</div><div class="pills" id="fb"></div></div>
+        <div><div class="lab">Type</div><div class="pills" id="ft"></div></div>
+      </div>
+    </div>
+    <div class="bar">
+      <span id="cnt" class="meta" aria-live="polite"></span>
+      <div class="tools">
+        <label class="meta check"><input type="checkbox" id="rent"> Show rented / booked</label>
+        <select id="sort" aria-label="Sort"><option value="p">Price: low to high</option><option value="pd">Price: high to low</option><option value="a">Size: large to small</option><option value="b">Bedrooms</option></select>
+        <button type="button" id="clr" class="ghost">Clear</button>
+      </div>
+    </div>
+    <div id="out" class="grid"></div>
+    <div class="more-row"><button type="button" id="more" class="ghost" hidden>Show more properties</button></div>
+  </section>
+
+  <section id="areas" class="section">
+    <div class="sh"><p class="eyebrow dark">Explore by community</p><h2>Where the listings are</h2>
+      <p class="meta">Tap a community to see every available property there. Medians are based on listings with a published price.</p></div>
+    <div id="areas-grid" class="areas"></div>
+  </section>
+
+  <section id="how" class="section how">
+    <div class="sh"><p class="eyebrow dark">Search tips</p><h2>Just type what you're looking for</h2></div>
+    <div class="tips">
+      <div><b>Bedrooms</b><p><code>2 bed</code>, <code>3-4 br</code>, <code>5+ bed</code> or <code>studio</code></p></div>
+      <div><b>Budget</b><p><code>under 3M</code>, <code>over 10 million</code>, or just <code>2.5M</code> for ±15%</p></div>
+      <div><b>Size</b><p><code>1500 sqft</code> or <code>140 sqm</code> — matches within 15%</p></div>
+      <div><b>Area &amp; type</b><p><code>palm villa</code>, <code>marina apartment</code>, <code>DIFC office</code></p></div>
+    </div>
+  </section>
+
+  <section id="contact" class="section contact">
+    <div class="sh"><p class="eyebrow dark">Get in touch</p><h2>Can't find the right fit?</h2>
+      <p class="meta">Tell us what you're after and we'll come back with matching options — including listings not shown here.</p>
+      <p class="cinfo"><a href="mailto:info@devishaproperties.com">✉ info@devishaproperties.com</a><button type="button" id="copy-mail" class="ghost">Copy email</button></p></div>
+    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="form">
+      <input type="hidden" name="form-name" value="contact">
+      <p class="sr"><label>Leave empty <input name="bot-field"></label></p>
+      <label>Name<input name="name" required autocomplete="name"></label>
+      <label>Email<input name="email" type="email" required autocomplete="email"></label>
+      <label>Phone<input name="phone" type="tel" autocomplete="tel"></label>
+      <label>Budget<select name="budget"><option>Under AED 2M</option><option>AED 2M – 5M</option><option>AED 5M – 15M</option><option>AED 15M+</option></select></label>
+      <label class="full">What are you looking for?<textarea name="message" rows="4" required placeholder="e.g. 3 bed villa in Dubai Hills, ready to move in"></textarea></label>
+      <button type="submit" class="primary full">Send request</button>
+    </form>
+    <div class="done" hidden><b>Almost done!</b> Your email app has opened with your request ready to send to info@devishaproperties.com. If nothing opened, please email us at that address.</div>
+  </section>
+</main>
+
+<footer class="foot">
+  <span>◆ Devisha Properties · Property Search Dubai</span>
+  <span class="meta">info@devishaproperties.com · Listings updated 12 Oct 2026 · Prices in AED. Availability and pricing subject to change.</span>
+</footer>
+
+<dialog id="detail" aria-labelledby="d-title">
+  <div class="d-scroll">
+    <button type="button" id="d-close" class="icon close" aria-label="Close">✕</button>
+    <div class="d-ph"><img id="d-img" alt=""><span id="d-type" class="type"></span></div>
+    <div class="d-body">
+      <div class="d-head">
+        <div><h2 id="d-title"></h2><p id="d-loc" class="meta"></p></div>
+        <div id="d-price" class="price big"></div>
+      </div>
+      <dl id="d-facts" class="facts-grid"></dl>
+      <div id="d-tags" class="tags"></div>
+      <h3>Enquire about this property</h3>
+      <form id="enquiry-form" name="property-enquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="form">
+        <input type="hidden" name="form-name" value="property-enquiry">
+        <input type="hidden" name="property">
+        <p class="sr"><label>Leave empty <input name="bot-field"></label></p>
+        <label>Name<input name="name" required autocomplete="name"></label>
+        <label>Email<input name="email" type="email" required autocomplete="email"></label>
+        <label class="full">Phone<input name="phone" type="tel" autocomplete="tel"></label>
+        <label class="full">Message<textarea name="message" rows="3" placeholder="I'd like to arrange a viewing…"></textarea></label>
+        <button type="submit" class="primary full">Request details</button>
+      </form>
+      <div id="enq-done" class="done" hidden><b>Almost done!</b> Your email app has opened with this enquiry ready to send. If nothing opened, email info@devishaproperties.com.</div>
+    </div>
+  </div>
+</dialog>
+
+<script src="data.js"></script>
+<script>
+(()=>{'use strict';
+const CONTACT={email:'info@devishaproperties.com'};
+const D=window.PROPS||[],$=i=>document.getElementById(i);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const fmtP=p=>p==null?'Price on request':p>=1e6?'AED '+(p/1e6).toFixed(2).replace(/\.?0+$/,'')+'M':'AED '+p.toLocaleString();
+const bedL=b=>b==null?'':b===0?'Studio':b+' BR';
+
+const IDS=new Set(D.map(r=>r.id.toLowerCase()));
+const S={area:null,beds:null,type:null,price:null};let limit=24,cur=[];
+const cnt={};D.forEach(r=>{if(r.l)cnt[r.l]=(cnt[r.l]||0)+1});
+const AREAS=Object.entries(cnt).sort((a,b)=>b[1]-a[1]);
+const same=(a,b)=>JSON.stringify(a)===JSON.stringify(b);
+function pill(box,label,key,val){const b=document.createElement('button');b.type='button';b.className='pill';b.textContent=label;b.dataset.k=key;b.dataset.v=JSON.stringify(val);
+ b.onclick=()=>{S[key]=same(S[key],val)?null:val;limit=24;sync()};$(box).appendChild(b)}
+AREAS.slice(0,16).forEach(([a])=>pill('fa',a,'area',a));
+[['Studio',[0,0]],['1',[1,1]],['2',[2,2]],['3',[3,3]],['4',[4,4]],['5+',[5,99]]].forEach(([l,v])=>pill('fb',l,'beds',v));
+['Apartment','Villa','Townhouse','Penthouse','Commercial'].forEach(l=>pill('ft',l,'type',l));
+{const g=document.createElement('div');g.innerHTML='<div class="lab">Budget</div><div class="pills" id="fp"></div>';document.querySelector('.row2').appendChild(g);
+ [['Under 2M',[1,2e6]],['2–5M',[2e6,5e6]],['5–10M',[5e6,1e7]],['10M+',[1e7,1e10]]].forEach(([l,v])=>pill('fp',l,'price',v))}
+['Downtown','2 bed','JVC','villa palm','1 bed under 2M','Marina'].forEach(t=>{const b=document.createElement('button');b.type='button';b.className='ex';b.textContent=t;b.onclick=()=>{$('q').value=t;run()};$('ex').appendChild(b)});
+
+function parse(q){
+ let t=' '+q.toLowerCase().replace(/million/g,'m').replace(/,/g,'')+' ',f={words:[]},m;const cut=x=>{t=t.replace(x,' ')};
+ if(m=t.match(/(\d+)\s*(?:-|to)\s*(\d+)\s*(?:br|bed|bdr|bhk)\w*/)){f.b=[+m[1],+m[2]];cut(m[0])}
+ else if(m=t.match(/(\d+)\s*\+\s*(?:br|bed|bdr|bhk)\w*/)){f.b=[+m[1],99];cut(m[0])}
+ else if(m=t.match(/(\d+)\s*(?:br|bed|bdr|bhk)\w*/)){f.b=[+m[1],+m[1]];cut(m[0])}
+ else if(/\bstudio\b/.test(t)){f.b=[0,0];cut(/\bstudio\b/)}
+ if(m=t.match(/(\d+(?:\.\d+)?)\s*(sq\s*\.?\s*ft|sqft|sqf|sft|square feet|sq\s*m|sqm)\b/)){f.size=+m[1]*(/m$/.test(m[2])?10.764:1);cut(m[0])}
+ const num=(a,u)=>+a*(u=='m'?1e6:u=='k'?1e3:1);
+ if(m=t.match(/(?:under|below|max|up to|less than|within|<)\s*(?:aed\s*)?(\d+(?:\.\d+)?)\s*([mk])?\b/)){f.pmax=num(m[1],m[2]);cut(m[0])}
+ if(m=t.match(/(?:over|above|min|from|more than|>)\s*(?:aed\s*)?(\d+(?:\.\d+)?)\s*([mk])?\b/)){f.pmin=num(m[1],m[2]);cut(m[0])}
+ if(m=t.match(/(\d+(?:\.\d+)?)\s*([mk])\b/)){const v=num(m[1],m[2]);f.pmin=v*.85;f.pmax=v*1.15;cut(m[0])}
+ if(m=t.match(/\b(\d{3,6})\b/)){const n=+m[1];if(n>=100000){f.pmin=n*.85;f.pmax=n*1.15}else if(n>=250&&!f.size)f.size=n;cut(m[0])}
+ if(f.b==null&&(m=t.match(/\b([0-9])\b/))){f.b=[+m[1],+m[1]];cut(m[0])}
+ const TY={apartment:'Apartment',apartments:'Apartment',flat:'Apartment',apt:'Apartment',villa:'Villa',villas:'Villa',townhouse:'Townhouse',penthouse:'Penthouse',office:'Commercial',offices:'Commercial',warehouse:'Commercial',duplex:'Duplex',land:'Land',plot:'Land'};
+ const stop=new Set('in at with for a an the near of and or bedroom bedrooms bed beds br bdr bhk sqft sq ft aed budget around about under over'.split(' '));
+ t.split(/[^a-z0-9]+/).filter(Boolean).forEach(w=>{if(TY[w])f.type=TY[w];else if(!stop.has(w))f.words.push(w)});
+ return f}
+function describe(f){const p=[];if(f.type)p.push(f.type);if(f.b)p.push(f.b[0]===f.b[1]?bedL(f.b[0]):f.b[0]+(f.b[1]<99?'–'+f.b[1]:'+')+' BR');
+ if(f.words.length)p.push('“'+f.words.join(' ')+'”');if(f.size)p.push('≈'+Math.round(f.size).toLocaleString()+' sq ft');
+ if(f.pmin>1&&f.pmax&&f.pmax<1e10)p.push(fmtP(f.pmin)+' – '+fmtP(f.pmax));else if(f.pmax&&f.pmax<1e10)p.push('up to '+fmtP(f.pmax));else if(f.pmin>1)p.push('from '+fmtP(f.pmin));return p.join(' · ')}
+function filt(){
+ const f=parse($('q').value);if(S.beds)f.b=S.beds;if(S.price){f.pmin=S.price[0];f.pmax=S.price[1]}if(S.type)f.type=S.type;if(S.area)f.words.push(...S.area.toLowerCase().split(' '));
+ const inc=$('rent').checked;
+ const res=D.filter(r=>{
+  if(!r.av&&!inc)return false;if(f.type&&r.t!==f.type)return false;
+  if(f.b&&(r.b==null||r.b<f.b[0]||r.b>f.b[1]))return false;
+  if(f.size&&(r.a==null||Math.abs(r.a-f.size)>f.size*.15))return false;
+  if((f.pmin||f.pmax)&&r.pr==null)return false;if(f.pmax&&r.pr>f.pmax)return false;if(f.pmin&&r.pr<f.pmin)return false;
+  const h=r.h+' '+r.t.toLowerCase();return f.words.every(w=>IDS.has(w)?r.id.toLowerCase()===w:h.includes(w))});
+ const K={p:(a,b)=>(a.pr??9e12)-(b.pr??9e12),pd:(a,b)=>(b.pr??-1)-(a.pr??-1),a:(a,b)=>(b.a??-1)-(a.a??-1),b:(a,b)=>(a.b??99)-(b.b??99)};
+ return[res.sort(K[$('sort').value]||K.p),f]}
+function run(){limit=24;sync();try{history.replaceState(null,'',$('q').value?'?q='+encodeURIComponent($('q').value):location.pathname)}catch(e){}}
+function sync(){
+ document.querySelectorAll('.pills button[data-k]').forEach(b=>b.classList.toggle('on',same(S[b.dataset.k],JSON.parse(b.dataset.v))));
+ const[res,f]=filt(),d=describe(f);cur=res;
+ $('cnt').innerHTML='<b>'+res.length+'</b> propert'+(res.length==1?'y':'ies')+(d?' for '+esc(d):'');
+ $('out').innerHTML=res.length?`<div class="catalogue"><div class="cat-head"><span>Ref</span><span>Property</span><span>Beds</span><span>Size</span><span>Parking</span><span>Status</span><span>Price</span></div>`+res.slice(0,limit).map((r,i)=>{
+  const tg=[r.m&&'Maid room',r.sd&&'Study',r.bal&&'Balcony',r.st&&'Storage',r.se].filter(Boolean).map(t=>'<span>'+esc(t)+'</span>').join('');
+  return `<div class="item" role="button" tabindex="0" data-i="${i}"><div class="c-ref"><b>${r.id}</b><span>${esc(r.t!=='Unknown'?r.t:'')}</span><button type="button" class="star${fav.has(r.id)?' on':''}" aria-label="Save to shortlist" data-id="${r.id}">${fav.has(r.id)?'★':'☆'}</button></div>
+  <div class="c-main"><h3>${esc(r.n)}${r.u?' <span>· '+esc(r.u)+'</span>':''}</h3><p class="loc">${esc(r.rl||r.l||'Location not listed')}</p>${tg?'<div class="tags">'+tg+'</div>':''}</div>
+  <div class="c-spec" data-l="Beds">${bedL(r.b)||'—'}</div><div class="c-spec" data-l="Size">${r.a?r.a.toLocaleString()+' sq ft':'—'}</div><div class="c-spec" data-l="Parking">${r.p!=null?r.p:'—'}</div>
+  <div class="c-status"><span class="status ${r.av?'ok':'off'}">${esc(r.s||(r.av?'Available':'Not available'))}</span></div>
+  <div class="price${r.pr==null?' na':''}">${fmtP(r.pr)}</div></div>`}).join('')+'</div>':
+  '<p class="empty">No matches. Try fewer words, or pick an area above.'+(()=>{const w=f.words[0],s=w&&AREAS.find(a=>a[0].toLowerCase().startsWith(w.slice(0,3)));return s?' Did you mean <b>'+esc(s[0])+'</b>?':''})()+'<br><a class="link" href="#contact" id="ask">Ask us to find it for you</a></p>';
+ $('more').hidden=res.length<=limit;$('more').style.display=res.length>limit?'':'none'}
+$('more').onclick=()=>{limit+=24;sync()};
+['input'].forEach(e=>$('q').addEventListener(e,run));$('rent').onchange=run;$('sort').onchange=run;
+$('hero-form').addEventListener('submit',e=>{e.preventDefault();run();$('results').scrollIntoView({behavior:'smooth'})});
+$('clr').onclick=()=>{$('q').value='';S.area=S.beds=S.type=S.price=null;run()};
+
+// stats + communities
+const live=D.filter(r=>r.av);
+$('s-count').textContent=live.length;$('s-areas').textContent=AREAS.length;$('s-villas').textContent=live.filter(r=>r.t==='Villa').length;
+$('areas-grid').innerHTML=AREAS.slice(0,12).map(([a,n])=>{const ps=D.filter(r=>r.l===a&&r.pr&&r.av).map(r=>r.pr).sort((x,y)=>x-y),med=ps.length?ps[ps.length>>1]:null;
+ return `<button type="button" class="area" data-a="${esc(a)}"><b>${esc(a)}</b><span>${n} listing${n>1?'s':''}</span><em>${med?'Median '+fmtP(med):'No published prices'}</em></button>`}).join('');
+$('areas-grid').onclick=e=>{const b=e.target.closest('[data-a]');if(b){S.area=b.dataset.a;$('q').value='';run();$('results').scrollIntoView({behavior:'smooth'})}};
+
+// property detail + enquiry
+const dlg=$('detail');
+function openP(i){openR(cur[i])}
+function openR(r){if(!r)return;
+ $('d-title').textContent=r.n+(r.u?' · '+r.u:'');$('d-loc').textContent=r.rl||r.l||'Location not listed';$('d-price').textContent=fmtP(r.pr);$('d-type').textContent=r.t!=='Unknown'?r.t:'';
+ const im=$('d-img');im.src=(document.querySelector('.hero-bg')||{}).src||'';im.alt='';
+ $('d-facts').innerHTML=[['Bedrooms',bedL(r.b)],['Size',r.a?r.a.toLocaleString()+' sq ft':''],['Price / sq ft',r.ppsf?'AED '+r.ppsf.toLocaleString():''],['Parking',r.p!=null?String(r.p):''],['Status',r.s||(r.av?'Available':'Not available')],['Series',r.se]].filter(f=>f[1]).map(f=>`<div><dt>${f[0]}</dt><dd>${esc(f[1])}</dd></div>`).join('');
+ $('d-tags').innerHTML=[r.m&&'Maid room',r.sd&&'Study',r.bal&&'Balcony',r.st&&'Storage'].filter(Boolean).map(t=>`<span>${t}</span>`).join('');
+ const f=$('enquiry-form');f.elements.property.value=r.n+(r.u?' '+r.u:'')+' – '+(r.rl||r.l||'');f.style.display='';$('enq-done').hidden=true;
+ const url=location.href.split('#')[0]+'#'+r.id,sb=$('d-share');sb.textContent='Share this property';
+ $('d-mail').href='mailto:?subject='+encodeURIComponent(r.id+' – '+r.n)+'&body='+encodeURIComponent(r.n+(r.u?' '+r.u:'')+' – '+(r.rl||r.l||'Dubai')+' – '+fmtP(r.pr)+'\n'+url);
+ sb.onclick=async()=>{try{if(navigator.share)await navigator.share({title:r.n,url});else{await navigator.clipboard.writeText(url);sb.textContent='Link copied ✓'}}catch(e){}};
+ try{history.replaceState(null,'','#'+r.id)}catch(e){}dlg.showModal()}
+{const sh=document.createElement('div');sh.className='cinfo';sh.innerHTML='<button type="button" class="ghost" id="d-share">Share this property</button><a class="ghost" id="d-mail">Email this property</a>';$('d-tags').after(sh)}
+dlg.addEventListener('close',()=>{try{history.replaceState(null,'',location.pathname+location.search)}catch(e){}})
+$('out').addEventListener('click',e=>{if(e.target.id==='ask'){const m=document.querySelector('form[name=contact] [name=message]');if(m)m.value='I am looking for: '+($('q').value||describe(filt()[1])||'a property')+'\n';return}const s=e.target.closest('.star');if(s){e.stopPropagation();toggleFav(s);return}const c=e.target.closest('[data-i]');if(c)openP(+c.dataset.i)});
+$('out').addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.target.closest('.star')){const c=e.target.closest('[data-i]');if(c)openP(+c.dataset.i)}});
+$('d-close').onclick=()=>dlg.close();dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close()});
+function send(f,done){const fd=new FormData(f);
+ const body=[...fd].filter(([k,v])=>!/form-name|bot-field/.test(k)&&v).map(([k,v])=>k.charAt(0).toUpperCase()+k.slice(1)+': '+v).join('\n');
+ const subj=f.getAttribute('name')==='contact'?'Property enquiry from website':'Enquiry: '+(fd.get('property')||'property');
+ location.href='mailto:'+CONTACT.email+'?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(body);
+ f.style.display='none';done.hidden=false}
+const cf=document.querySelector('form[name=contact]');cf.addEventListener('submit',e=>{e.preventDefault();send(cf,document.querySelector('.contact .done'))});
+$('enquiry-form').addEventListener('submit',e=>{e.preventDefault();send($('enquiry-form'),$('enq-done'))});
+
+// shortlist + contact details
+let fav=new Set();try{fav=new Set(JSON.parse(localStorage.getItem('ps-fav')||'[]'))}catch(e){}
+const BY=Object.fromEntries(D.map(r=>[r.id,r]));
+const bar=document.createElement('div');bar.id='fbar';bar.hidden=true;bar.innerHTML='<span id="fcnt"></span><button type="button" id="fmail">Email enquiry</button><button type="button" id="fcp" class="ghost">Copy</button><button type="button" id="fclr" class="ghost">Clear</button>';document.body.appendChild(bar);
+const lines=()=>[...fav].map(i=>BY[i]).filter(Boolean).map(r=>'• '+r.id+' – '+r.n+(r.u?' '+r.u:'')+' ('+(r.rl||r.l||'Dubai')+') – '+fmtP(r.pr));
+function barUpd(){bar.hidden=!fav.size;$('fcnt').textContent=fav.size+' saved';try{localStorage.setItem('ps-fav',JSON.stringify([...fav]))}catch(e){}}
+function toggleFav(b){const id=b.dataset.id;fav.has(id)?fav.delete(id):fav.add(id);b.textContent=fav.has(id)?'★':'☆';b.classList.toggle('on',fav.has(id));barUpd()}
+$('fmail').onclick=()=>{location.href='mailto:'+CONTACT.email+'?subject='+encodeURIComponent('Enquiry about '+fav.size+' properties')+'&body='+encodeURIComponent('Hello, I am interested in these properties:\n\n'+lines().join('\n')+'\n\nMy name and phone number:\n')};
+$('fclr').onclick=()=>{fav.clear();barUpd();sync()};
+$('fcp').onclick=async()=>{try{await navigator.clipboard.writeText(lines().join('\n'));$('fcp').textContent='Copied ✓'}catch(e){}};
+barUpd();
+const cm=$('copy-mail');if(cm)cm.onclick=async()=>{try{await navigator.clipboard.writeText(CONTACT.email);cm.textContent='Copied ✓'}catch(e){cm.textContent=CONTACT.email}};
+// dark mode
+const H=document.documentElement;let th;try{th=localStorage.getItem('ps-theme')}catch(e){}
+const setT=t=>{H.dataset.theme=t;H.classList.toggle('dark',t==='dark');try{localStorage.setItem('ps-theme',t)}catch(e){}};
+setT(th||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'));
+$('theme').onclick=()=>setT(H.dataset.theme==='dark'?'light':'dark');
+
+// share
+const sb=document.createElement('button');sb.type='button';sb.className='ghost';sb.textContent='Share';
+sb.onclick=async()=>{const u={title:document.title,text:'Search Dubai properties',url:location.href.split('#')[0]};try{if(navigator.share)await navigator.share(u);else{await navigator.clipboard.writeText(u.url);sb.textContent='Link copied'}}catch(e){}};
+document.querySelector('.nav nav').insertBefore(sb,$('theme'));
+// install as an app + offline
+let dp;addEventListener('beforeinstallprompt',e=>{e.preventDefault();dp=e;const b=document.createElement('button');b.type='button';b.className='ghost';b.textContent='Install app';b.onclick=()=>{dp.prompt();b.remove()};document.querySelector('.nav nav').prepend(b)});
+const qp=new URLSearchParams(location.search).get('q');if(qp)$('q').value=qp;
+sync();
+if(location.hash.length>1)openR(BY[decodeURIComponent(location.hash.slice(1))]);
+})();
+
+</script>
+</body>
+</html>
